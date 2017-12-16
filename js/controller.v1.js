@@ -27,6 +27,7 @@ Controller.api = (function (){
       View.printData.loader(false);
     }
     catch (err){
+      View.printData.error(true);
       console.log(err.toString());
     }
   }

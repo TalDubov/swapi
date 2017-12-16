@@ -22,6 +22,7 @@ View.printData = (function (){
    */
   printData.cleanList = function (){
     this.loader(true);
+    this.error(false);
     jQuery('li:not(.templates)').remove();
   }
   /**
@@ -33,6 +34,17 @@ View.printData = (function (){
     }
     else{
        jQuery('#loader').hide();
+    }
+  }
+  /**
+   * @param show {string}
+   */
+  printData.error = function (show) {
+    if(show){
+      jQuery('#error_message').show();
+    }
+    else{
+      jQuery('#error_message').hide();
     }
   }
   return printData;

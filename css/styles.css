@@ -34,3 +34,6 @@
 .notSaved{
     content:url('../images/star.png');
 }
+.alert-danger{
+    display: none;
+}
