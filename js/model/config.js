@@ -2,7 +2,7 @@
  * Created by TalDubov on 15/12/2017.
  */
 /**
- * @type {{people: string, films: string}}
+ * @type {{people: string, films: string, planets: string}}
  */
 Model.config = {
   people: {
@@ -18,7 +18,7 @@ Model.config = {
     viewModel: "./js/view/items/filmType.js"
   },
   planets : {
-    name: "planetrs",
+    name: "planets",
     root: "https://swapi.co/api/planets/",
     validationModel: "./js/model/validations/planetType.js",
     viewModel: "./js/view/items/planetType.js"
