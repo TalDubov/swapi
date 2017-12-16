@@ -13,8 +13,8 @@ Model.request = (function (){
   function request (){
   }
   /**
-   *
-   * @param type {string}
+   * @param type
+   * @return {*}
    */
   request.createRequest = function(type){
     var url = Model.api.getRoot(type);
@@ -39,6 +39,12 @@ Model.request = (function (){
 Model.api = (function (){
   function api (){
   }
+
+  /** Get the url from config file by the type of it
+   * @param type {string}
+   * @return {string}
+   * @throws Error
+   */
   api.getRoot = function  (type){
     for(var key in Model.config){
       if(Model.config[key].name === type){
