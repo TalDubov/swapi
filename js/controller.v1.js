@@ -41,7 +41,7 @@ Controller.favourites = (function (){
   }
   /**
    * @param elementObj {{}}
-   * @param id {int}
+   * @param id {string}
    */
   favourites.eventHandler = function (elementObj, id){
     var saveIt = !!$(elementObj).hasClass('notSaved');

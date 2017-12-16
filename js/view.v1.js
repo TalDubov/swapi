@@ -55,9 +55,15 @@ View.printData = (function (){
 View.favourites = (function (){
   function favourites (){
   }
+  /**
+   * @param elementObj {}
+   */
   favourites.markAsFavourite = function (elementObj){
     $(elementObj).removeClass('notSaved');
   }
+  /**
+   * @param elementObj {}
+   */
   favourites.markAsNotFavourite = function (elementObj){
     $(elementObj).addClass('notSaved');
   }
