@@ -1,0 +1,7 @@
+test:
+  - /*.test.js
+load:
+- ../libaries/jquery-3.2.1.min.js
+- ../model.v1.js
+- ../model/validations/validations.js
+- ../model/validations/personType.js

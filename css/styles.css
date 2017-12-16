@@ -1,0 +1,36 @@
+.templates {
+    display: none;
+}
+#mainList{
+    max-width: 322px;
+    text-align: left;
+    margin: auto;
+}
+#mainList li{
+    list-style-type: none;
+    font:normal 14px Tahoma;
+}
+#loader{
+    display: none;
+}
+.btn{
+    cursor: pointer;
+}
+.star{
+    cursor: pointer;
+}
+.topContainer{
+    text-align: center;
+    margin: 0px;
+    vertical-align: middle;
+    height: 100px;
+    padding-top: 25px
+}
+.listContainer{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+.notSaved{
+    content:url('../images/star.png');
+}
