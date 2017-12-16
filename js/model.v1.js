@@ -55,14 +55,14 @@ Model.api = (function (){
     var markedAsFavourite = false;
     for(var i in list){
       try{
-        var validationType = Model.validations.factory.getValidationByType(type);
-        validationType.itemData(list[i]);
-        markedAsFavourite = Model.cookies.get(list[i].url, type);
-        var viewType = View.items.factory.getViewByType(type);
+        var validationType = Model.validations.factory.getValidationByType(type); // Get the validation for this type
+        validationType.itemData(list[i]); // Validate the item data by type validator
+        markedAsFavourite = Model.cookies.get(list[i].url, type); // Get from cookie the stored data if exists
+        var viewType = View.items.factory.getViewByType(type); // Get the view for this type
         viewType.printItem(list[i], markedAsFavourite);
       }
       catch (err){
-        console.log(err.toString());
+        console.log(err.toString()); // Only log for the specific item, it wont break
       }
     }
   }

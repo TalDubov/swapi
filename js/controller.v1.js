@@ -12,7 +12,7 @@ Controller.api = (function (){
    * @param type {string}
    */
   api.get = function(type){
-    View.printData.cleanList();
+    View.printData.cleanList(); // Cleaning the view before inserting new data
     var response =  Model.request.createRequest(type);
     Controller.api.handleResponse(response, type);
   }
@@ -22,8 +22,8 @@ Controller.api = (function (){
    */
   api.handleResponse = function (result, type){
     try{
-      Model.validations.response.responseResult(result);
-      Model.api.handleListResult(result.results, type);
+      Model.validations.response.responseResult(result); // Validate the obj returned from the api
+      Model.api.handleListResult(result.results, type); // The type will pass to the model for factories of view+validations
       View.printData.loader(false);
     }
     catch (err){
