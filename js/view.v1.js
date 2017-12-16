@@ -8,26 +8,26 @@ var View = {};
 /**
  *  View printData
  */
-View.printData = (function () {
-  function printData () {
+View.printData = (function (){
+  function printData (){
   }
   /**
    * @param item {string}
    */
-  printData.newItemAppend = function (item) {
+  printData.newItemAppend = function (item){
     jQuery('#mainList').append(item);
   }
   /**
    *  clean the list in html
    */
-  printData.cleanList = function () {
+  printData.cleanList = function (){
     this.loader(true);
     jQuery('li:not(.templates)').remove();
   }
   /**
    * @param show {boolean}
    */
-  printData.loader = function (show) {
+  printData.loader = function (show){
     if(show){
       jQuery('#loader').show();
     }
@@ -40,13 +40,13 @@ View.printData = (function () {
 /**
  * View favourites
  */
-View.favourites = (function () {
-  function favourites () {
+View.favourites = (function (){
+  function favourites (){
   }
-  favourites.markAsFavourite = function (elementObj) {
+  favourites.markAsFavourite = function (elementObj){
     $(elementObj).removeClass('notSaved');
   }
-  favourites.markAsNotFavourite = function (elementObj) {
+  favourites.markAsNotFavourite = function (elementObj){
     $(elementObj).addClass('notSaved');
   }
   return favourites;

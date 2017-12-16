@@ -5,13 +5,13 @@ var Controller = {};
 /**
  *  Controller api
  */
-Controller.api = (function () {
-  function api () {
+Controller.api = (function (){
+  function api (){
   }
   /**
    * @param type {string}
    */
-  api.get  = function(type) {
+  api.get = function(type){
     View.printData.cleanList();
     var response =  Model.request.createRequest(type);
     Controller.api.handleResponse(response, type);
@@ -20,13 +20,13 @@ Controller.api = (function () {
    * @param result {{}}
    * @param type {string}
    */
-  api.handleResponse = function (result, type) {
+  api.handleResponse = function (result, type){
     try{
       Model.validations.response.responseResult(result);
       Model.api.handleListResult(result.results, type);
       View.printData.loader(false);
     }
-    catch (err) {
+    catch (err){
       console.log(err.toString());
     }
   }
@@ -35,16 +35,16 @@ Controller.api = (function () {
 /**
  *  Controller favourites
  */
-Controller.favourites = (function () {
-  function favourites () {
+Controller.favourites = (function (){
+  function favourites (){
   }
   /**
    * @param elementObj {{}}
    * @param id {int}
    */
-  favourites.eventHandler = function (elementObj, id) {
+  favourites.eventHandler = function (elementObj, id){
     var saveIt = !!$(elementObj).hasClass('notSaved');
-    if(saveIt) {
+    if(saveIt){
       Model.cookies.set(id, true);
       View.favourites.markAsFavourite(elementObj);
     }

@@ -9,24 +9,24 @@ var Model = {};
 /***
  *  Model Request
  */
-Model.request = (function () {
-  function request () {
+Model.request = (function (){
+  function request (){
   }
   /**
    *
    * @param type {string}
    */
-  request.createRequest = function(type) {
+  request.createRequest = function(type){
     var url = Model.api.getRoot(type);
     var result =  jQuery.ajax({
       url: url,
       type: 'GET',
       async:false,
-      error: function(data) { // TODO: handle with the data of error
+      error: function(data){ // TODO: handle with the data of error
         throw new Error('Error With Ajax', 201712122352);
       }
     });
-    if(result.responseJSON === undefined) {
+    if(result.responseJSON === undefined){
       throw new Error('Error With Ajax', 201712122353);
     }
     return result.responseJSON;
@@ -36,12 +36,12 @@ Model.request = (function () {
 /**
  *  Model People
  */
-Model.api = (function () {
-  function api () {
+Model.api = (function (){
+  function api (){
   }
-  api.getRoot = function  (type) {
-    for(var key in Model.config) {
-      if(Model.config[key].name === type) {
+  api.getRoot = function  (type){
+    for(var key in Model.config){
+      if(Model.config[key].name === type){
         return Model.config[key].root;
       }
     }
@@ -51,9 +51,9 @@ Model.api = (function () {
    * @param list {{}}
    * @param type {string}
    */
-  api.handleListResult = function (list, type) {
-    for(var i in list) {
-      var markedAsFavourite = false;
+  api.handleListResult = function (list, type){
+    var markedAsFavourite = false;
+    for(var i in list){
       try{
         var validationType = Model.validations.factory.getValidationByType(type);
         validationType.itemData(list[i]);
@@ -61,7 +61,7 @@ Model.api = (function () {
         var viewType = View.items.factory.getViewByType(type);
         viewType.printItem(list[i], markedAsFavourite);
       }
-      catch (err) {
+      catch (err){
         console.log(err.toString());
       }
     }
@@ -71,16 +71,26 @@ Model.api = (function () {
 /**
  *  Model Cookies
  */
-Model.cookies = (function () {
-  function cookies () {
+Model.cookies = (function (){
+  function cookies (){
   }
-  cookies.set = function (key, value) {
+  /**
+   * @param key {string}
+   * @param value {string}
+   */
+  cookies.set = function (key, value){
     $.cookie(key,value, { expires : 10});
   }
-  cookies.get = function (key) {
+  /**
+   * @param key {string}
+   */
+  cookies.get = function (key){
     return $.cookie(key);
   }
-  cookies.remove = function (key) {
+  /**
+   * @param key {string}
+   */
+  cookies.remove = function (key){
     $.removeCookie(key);
   }
   return cookies;

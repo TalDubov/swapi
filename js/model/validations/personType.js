@@ -4,15 +4,15 @@
 /**
  * Person type
  */
-Model.validations.personType = (function () {
-  function personType () {
+Model.validations.personType = (function (){
+  function personType (){
   }
   personType.prototype = Object.create(Model.validations.typeAbstract.prototype);
   /**
    * @param data {{}}
    * @throws Error
    */
-  personType.prototype.itemData = function (data) {
+  personType.prototype.itemData = function (data){
     if(data.name == undefined){
       throw new Error('Name is missing from response', 201712151554);
     }
