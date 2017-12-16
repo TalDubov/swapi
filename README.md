@@ -27,7 +27,7 @@ To add a new api you need to the following updates:
 
 - create a new type of validation (/js/validations/newType) with specific fields you want to validate
 
-- add the new 2 files above to the js/model/config.js and write a name for the new type
+- add the new 2 files above to the [js/model/config.js ](https://github.com/taltulik/swapi/blob/master/js/model/config.js) and write a name for the new type
 
 - add the new type to the index.html file
 
